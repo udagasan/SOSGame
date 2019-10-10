@@ -1,0 +1,212 @@
+﻿<Window x:Class="UI.EnterGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+        mc:Ignorable="d"
+        Name="firstWindow"
+        Loaded="FirstWindow_OnLoaded"
+        Background="{DynamicResource MaterialDesignPaper}" 
+       Height="Auto" Width="Auto"
+       TextElement.Foreground="{DynamicResource MaterialDesignBody}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Purple.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+
+        <materialDesign:Card 
+                    Background="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                    Foreground="{DynamicResource PrimaryHueDarkBrush}"
+                    Height="Auto" Width="Auto"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                    Padding="8" Margin="0,0,-8,-8">
+            <StackPanel >
+
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
+                        <TextBlock
+                         IsEnabled="False"
+                         Style="{StaticResource MaterialDesignTitleTextBlock}">
+                         Oyun Boyutunu Seçiniz
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel  Name="GameSizeStackPannel" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <ToggleButton
+                        Name="GameSize6"
+                         Content="6"
+                         Style="{StaticResource MaterialDesignActionToggleButton}"
+                         Click="GameSizeClicked"
+                         IsEnabled="True"
+                          Margin="1,1,1,1"
+                         ToolTip="MaterialDesignActionToggleButton" />
+                        <ToggleButton
+                         Content="8"
+                         Name="GameSize8"
+                         Style="{StaticResource MaterialDesignActionToggleButton}"
+                         IsEnabled="True"
+                         IsChecked="False"
+                         Click="GameSizeClicked"
+                          Margin="1,1,1,1"
+                         ToolTip="MaterialDesignActionToggleButton" />
+                        <ToggleButton
+                         Content="10"
+                        Name="GameSize10"
+                         Style="{StaticResource MaterialDesignActionToggleButton}"
+                         IsEnabled="True"
+                          Margin="1,1,1,1"
+                         Click="GameSizeClicked"
+                         ToolTip="MaterialDesignActionToggleButton" />
+                        <ToggleButton
+                         Content="12"
+                         Name="GameSize12"
+                         Style="{StaticResource MaterialDesignActionToggleButton}"
+                         Click="GameSizeClicked"
+                         IsEnabled="True"
+                          Margin="1,1,1,1"
+                         ToolTip="MaterialDesignActionToggleButton" />
+                        <ToggleButton
+                         Content="14"
+                         Name="GameSize16"
+                         Style="{StaticResource MaterialDesignActionToggleButton}"
+                         Click="GameSizeClicked"
+                         IsEnabled="True"
+                          Margin="1,1,1,1"
+                         ToolTip="MaterialDesignActionToggleButton" />
+                        <ToggleButton
+                         Content="16"
+                        Name="GameSize18"
+                         Style="{StaticResource MaterialDesignActionToggleButton}"
+                         Click="GameSizeClicked"
+                         IsEnabled="True"
+                          Margin="1,1,1,1"
+                        
+                         ToolTip="MaterialDesignActionToggleButton" />
+
+                    </StackPanel>
+
+                    <StackPanel Name="UserSettingsStackPannel">
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <TextBlock Width="160"
+                            Style="{StaticResource MaterialDesignBody2TextBlock}">
+                             Bilgisayara ile oyna
+                            </TextBlock>
+                            <ToggleButton
+                             Name="CompuerClickCheckBox" 
+                             Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"
+                             ToolTip="MaterialDesignSwitchAccentToggleButton"
+                             Click="ComputerGameClick"
+                             IsChecked="True" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <TextBlock Width="160"
+                          Style="{StaticResource MaterialDesignBody2TextBlock}">
+                           Arkadaşınla oyna
+                            </TextBlock>
+                            <ToggleButton
+                            Name="HumanClickCheckBox" 
+                             Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"
+                             ToolTip="MaterialDesignSwitchAccentToggleButton"
+                             Click="HumanGameClick"
+                             IsChecked="False" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <TextBlock Width="160"
+                            Style="{StaticResource MaterialDesignBody2TextBlock}">
+                            Oyun sesleri
+                            </TextBlock>
+                            <ToggleButton
+                             Name="SoudContoller" 
+                             Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"
+                             ToolTip="MaterialDesignSwitchAccentToggleButton"
+                             Click="Soud_Click"
+                             IsChecked="False" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <TextBlock Width="160"
+                            Style="{StaticResource MaterialDesignBody2TextBlock}">
+                            Zamanlı Oyna
+                            </TextBlock>
+                            <ToggleButton
+                             Name="TimerControl" 
+                             Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"
+                             ToolTip="MaterialDesignSwitchAccentToggleButton"
+                             Click="Timer_Click"
+                             IsChecked="True" />
+                        </StackPanel>
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <materialDesign:TimePicker
+                             Is24Hours="True"
+                                
+                             x:Name="PresetTimePicker"
+                             SelectedTimeChanged="PresetTimePicker_SelectedTimeChanged" />
+                        </StackPanel>
+                        <StackPanel Name="GameLevelStackPannel" Orientation="Horizontal" Margin="0,5,0,10">
+                            <TextBlock Width="160"
+                                       VerticalAlignment="Center"
+                          Style="{StaticResource MaterialDesignBody2TextBlock}">
+                         Oyun Zorluk Değeri
+                            </TextBlock>
+
+                            <ComboBox Name="GameLevelComboBox">
+                                Easy
+                                <ComboBoxItem>
+                                    Medium
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    Hard
+                                </ComboBoxItem>
+                                <ComboBoxItem  IsSelected="True">
+                                    Very Hard
+                                </ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,5">
+
+                    <Grid >
+                        <Button
+                        Background="GreenYellow"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        materialDesign:ButtonProgressAssist.Value="-1"
+                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                        Content="Oyna"
+                        Click="PlayClick"
+                        Margin="2,0" />
+                    </Grid>
+                    <Grid  >
+                        <Button
+                        Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                        Width="80"
+                        ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                        materialDesign:RippleAssist.IsDisabled="True"
+                         Margin="2,0" 
+                        Click="CalcelClick"
+                        >
+                            Çıkış
+                        </Button>
+                    </Grid>
+
+                </StackPanel>
+            </StackPanel>
+        </materialDesign:Card>
+
+    </Grid>
+</Window>

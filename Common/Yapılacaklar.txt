@@ -1,0 +1,9 @@
+﻿1-> Oyuna zamanlama getirilcek,süre değiştirilebilir olacak
+2-> Oyun başlangıcında matrix'in bir kısmı dolu olarak oyuna başlanma seçeneği olacak
+3-> Bilgisayara zorluk seviyeleri getirilece
+	3.1-> Kolay seviyede sadece satırlar kontrol edilecek
+	3.2-> Orta seviyede satır ve sütunlardaki SOS olma durumu kontrol edilecek
+	3.3-> Zor seviyede satır sütun ve sağ çapraz sol çapraz durumlarına bakılacak
+4-> Arka plan resmi ayarlanacak
+
+Oyun zorluk seviyesi sadece bilgisayarla oynada çıkacak

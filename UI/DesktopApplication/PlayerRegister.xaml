@@ -1,0 +1,70 @@
+﻿<Window x:Class="UI.PlayerRegister"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+          TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+        mc:Ignorable="d"
+        x:Name="PlayerRegisterRoot"
+        Background="{DynamicResource MaterialDesignPaper}"
+        Title="Oyuncu Girişi">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Purple.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <materialDesign:Card 
+  Background="{DynamicResource PrimaryHueDarkForegroundBrush}"
+  Foreground="{DynamicResource PrimaryHueDarkBrush}"
+          HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+
+  Padding="8">
+        <StackPanel>
+            <StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <TextBlock Name="UserNameLabel"  VerticalAlignment="Center" HorizontalAlignment="Center"
+                      Style="{StaticResource MaterialDesignTitleTextBlock}">
+                     Kullanıcı Adı
+                    </TextBlock>
+
+                    <TextBox
+                        Name ="Name" 
+                    materialDesign:HintAssist.Hint="istediğinizi yazabilirsiniz"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                </StackPanel>
+
+                <StackPanel Name="PaleyerStackPannel" 
+                            Orientation="Horizontal" 
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Center" Margin="0,30,0,0"/>
+                <StackPanel>
+                    <Button  Name="PlayButton"
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Center"
+                            Foreground="AliceBlue"
+                            Margin="106,5,106,0"
+                            MinWidth="80"
+                            Width="Auto"
+                            Click="Play_Click" Content="Tamam"/>
+                </StackPanel>
+
+
+
+            </StackPanel>
+
+        </StackPanel>
+    </materialDesign:Card>
+
+</Window>
